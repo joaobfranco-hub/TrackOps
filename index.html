@@ -21,36 +21,33 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         .container { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
             width: 90%; 
-            max-width: 900px; 
+            max-width: 500px; 
         }
         .btn { 
             background-color: #ffffff; 
             color: #333; 
             border: 2px solid #ee4d2d; 
-            padding: 25px 20px; 
+            padding: 22px; 
             text-decoration: none; 
-            border-radius: 15px; 
+            border-radius: 12px; 
             text-align: center; 
             font-weight: bold; 
             font-size: 1.1rem;
             transition: all 0.3s ease; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .btn:hover { 
             background-color: #ee4d2d; 
             color: white; 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 15px rgba(238, 77, 45, 0.2);
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(238, 77, 45, 0.2);
         }
         .footer { 
-            margin-top: 50px; 
+            margin-top: 40px; 
             font-size: 0.85rem; 
             color: #666; 
             text-align: center;
@@ -70,14 +67,11 @@
 
         <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzlGLOP2ZUnk0u6qw2QRuMNODx4ufWJ3mdB0z75TUY-cZEgVd40d_ED6NzzjKZ5BozNUw/exec" 
            target="_blank" class="btn">Report Operacional Hora a Hora</a>
-
-        <a href="https://spx-motoristas.uat.shps-br-services.com/yms/index.php" 
-           target="_blank" class="btn">Portal YMS Motoristas</a>
     </div>
 
     <p class="footer">
-        <strong>Acesso Restrito</strong><br>
-        Se os links não abrirem, verifique se você está logado na conta corporativa.
+        <strong>Acesso Restrito - Uso Interno</strong><br>
+        Certifique-se de estar logado na conta corporativa Shopee.
     </p>
 
 </body>
