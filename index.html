@@ -3,28 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Links Operacionais</title>
+    <title>Painel Operacional SPX</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-        h1 { color: #ee4d2d; margin-bottom: 30px; }
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 90%; max-width: 800px; }
-        .btn { background-color: #ffffff; color: #333; border: 2px solid #ee4d2d; padding: 20px; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn:hover { background-color: #ee4d2d; color: white; transform: translateY(-3px); }
-        .footer { margin-top: 40px; font-size: 0.8rem; color: #888; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background-color: #f7f7f7; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+        h1 { 
+            color: #ee4d2d; 
+            margin-bottom: 30px; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            width: 90%; 
+            max-width: 900px; 
+        }
+        .btn { 
+            background-color: #ffffff; 
+            color: #333; 
+            border: 2px solid #ee4d2d; 
+            padding: 25px 20px; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn:hover { 
+            background-color: #ee4d2d; 
+            color: white; 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 15px rgba(238, 77, 45, 0.2);
+        }
+        .footer { 
+            margin-top: 50px; 
+            font-size: 0.85rem; 
+            color: #666; 
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Painel de Links SPX</h1>
+    <h1>Painel Operacional SPX</h1>
 
     <div class="container">
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbySMYCH1CslCW7Fn5txcknawimvDII4ifkLzFDZuLjOdWtVfsgzeuAkqzMFcZvgPH31/exec" target="_blank" class="btn">Macro Script 1</a>
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" target="_blank" class="btn">Macro Script 2</a>
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzlGLOP2ZUnk0u6qw2QRuMNODx4ufWJ3mdB0z75TUY-cZEgVd40d_ED6NzzjKZ5BozNUw/exec" target="_blank" class="btn">Macro Script 3</a>
-        <a href="https://spx-motoristas.uat.shps-br-services.com/yms/index.php" target="_blank" class="btn">Portal YMS Motoristas</a>
+        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbySMYCH1CslCW7Fn5txcknawimvDII4ifkLzFDZuLjOdWtVfsgzeuAkqzMFcZvgPH31/exec" 
+           target="_blank" class="btn">Painel Acompanhamento de FM</a>
+
+        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" 
+           target="_blank" class="btn">Painel Acompanhamento de Priorização</a>
+
+        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzlGLOP2ZUnk0u6qw2QRuMNODx4ufWJ3mdB0z75TUY-cZEgVd40d_ED6NzzjKZ5BozNUw/exec" 
+           target="_blank" class="btn">Report Operacional Hora a Hora</a>
+
+        <a href="https://spx-motoristas.uat.shps-br-services.com/yms/index.php" 
+           target="_blank" class="btn">Portal YMS Motoristas</a>
     </div>
 
-    <p class="footer">Uso Interno - Acesso Restrito</p>
+    <p class="footer">
+        <strong>Acesso Restrito</strong><br>
+        Se os links não abrirem, verifique se você está logado na conta corporativa.
+    </p>
 
 </body>
 </html>
