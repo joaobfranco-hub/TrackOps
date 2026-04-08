@@ -3,79 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Operacional SPX</title> 
+    <title>TrackOps | Shopee Control</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            background-color: #f7f7f7; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            min-height: 100vh; 
-            margin: 0; 
+        :root {
+            --shopee-orange: #ee4d2d;
+            --glass-bg: rgba(255, 230, 220, 0.7);
+            --text-dark: #333;
         }
-        h1 { 
-            color: #ee4d2d; 
-            margin-bottom: 30px; 
-            text-align: center;
-        }
-        .container { 
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            /* Fundo com leve degradê tecnológico */
+            background: radial-gradient(circle at top right, #fff5f2, #e5e7eb);
+            margin: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px; 
-            width: 90%; 
-            max-width: 500px; 
+            align-items: center;
+            min-height: 100vh;
         }
-        .btn { 
-            background-color: #ffffff; 
-            color: #333; 
-            border: 2px solid #ee4d2d; 
-            padding: 20px; 
-            text-decoration: none; 
-            border-radius: 12px; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-        }
-        .btn:hover { 
-            background-color: #ee4d2d; 
-            color: white; 
-            transform: scale(1.02);
-            box-shadow: 0 6px 12px rgba(238, 77, 45, 0.2);
-        }
-        .footer { 
-            margin-top: 40px; 
-            font-size: 0.85rem; 
-            color: #666; 
+
+        .logo-container {
+            margin-bottom: 30px;
             text-align: center;
+        }
+
+        .logo-container img {
+            width: 180px; /* Logo da Shopee */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .main-title {
+            color: var(--shopee-orange);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1300px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px); /* Efeito de vidro */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(238, 77, 45, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--shopee-orange);
+            background: rgba(255, 230, 220, 0.85);
+        }
+
+        .card-header {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--shopee-orange);
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(238, 77, 45, 0.1);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 12px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .link-item:hover {
+            background: #fff;
+            color: var(--shopee-orange);
+            padding-left: 20px;
+            border-color: var(--shopee-orange);
+        }
+
+        .link-item::before {
+            content: '→';
+            margin-right: 10px;
+            color: var(--shopee-orange);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 40px 0 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .dev-tag {
+            font-weight: 700;
+            color: #444;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Painel Operacional SPX</h1>
-
-    <div class="container">
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbySMYCH1CslCW7Fn5txcknawimvDII4ifkLzFDZuLjOdWtVfsgzeuAkqzMFcZvgPH31/exec" 
-           target="_blank" class="btn">Painel Acompanhamento de FM</a>
-
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" 
-           target="_blank" class="btn">Painel Acompanhamento de Priorização</a>
-
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzlGLOP2ZUnk0u6qw2QRuMNODx4ufWJ3mdB0z75TUY-cZEgVd40d_ED6NzzjKZ5BozNUw/exec" 
-           target="_blank" class="btn">Report Operacional Hora a Hora</a>
-
-        <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbwq8nOYSLcIag-x8Lqb_Ylxk3BOxmAQrgoTNa8U9VLx-aJ5LrzoHpSwK0vYypXVLE7E1A/exec" 
-           target="_blank" class="btn">Dashboard de ABS</a>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee Logo">
     </div>
 
-    <p class="footer">
-        <strong>Acesso Restrito - Uso Interno</strong><br>
-        Logue na conta corporativa Shopee para acessar.
-    </p>
+    <div class="main-title">TrackOps Control Panel</div>
+
+    <div class="dashboard-grid">
+        
+        <div class="card">
+            <div class="card-header">OSP-01</div>
+            <div class="link-group">
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzz70zFjOU7mxCS53KaNXVyt57Ult2XaFRUYlK5Ag5FXBaut7yy6xzMAIAMlJZOx7_dLw/exec" target="_blank" class="link-item">Acompanhamento de FM</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbz-ayzXu4ZvgoPMA11rlTv0fgQJv-Q9nC6uHG_AMs4D6QrgJ6tMFPE7Yo01H7na3YPuww/exec" target="_blank" class="link-item">Acompanhamento Hora a Hora</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" target="_blank" class="link-item">Priorização</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">OSP-02</div>
+            <div class="link-group">
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbwhE4JwtIJGa3IoL8SqrIKLUdNBYRYqLTaaVZLnb9mjx4AH3-i98ptew6R7TisjRBJj/exec" target="_blank" class="link-item">Acompanhamento de FM</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzYE9r8jfvEsZ0op_meRQ2AB0zCgUqc2juQ-c7l_Ff_Mr9vA8S0439bFouG4XrgxfA3AA/exec" target="_blank" class="link-item">Acompanhamento Hora a Hora</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" target="_blank" class="link-item">Priorização</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">OSP-03</div>
+            <div class="link-group">
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbySMYCH1CslCW7Fn5txcknawimvDII4ifkLzFDZuLjOdWtVfsgzeuAkqzMFcZvgPH31/exec" target="_blank" class="link-item">Acompanhamento de FM</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbzlGLOP2ZUnk0u6qw2QRuMNODx4ufWJ3mdB0z75TUY-cZEgVd40d_ED6NzzjKZ5BozNUw/exec" target="_blank" class="link-item">Acompanhamento Hora a Hora</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" target="_blank" class="link-item">Priorização</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">OSP-04</div>
+            <div class="link-group">
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbxEwMUAMpA-8wONY_2gGxWjx0jRHvgE2IQBfuAqASG3Vfkyx3SMEhOdKvkl0iFVXqZyzg/exec" target="_blank" class="link-item">Acompanhamento de FM</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbynBoU3C9RlpSsJ_HrwK7xX7YoY3VPfOA8qaFhwGpeb7PronI9Df1ZFX4ONxW1zVkse/exec" target="_blank" class="link-item">Acompanhamento Hora a Hora</a>
+                <a href="https://script.google.com/a/macros/shopee.com/s/AKfycbyID5SA6PYsBqLyX3H-h0xTJxQNRxpQE4rkMYewrQ2shRgSo5wJoroG5JxmLXQF8GHm/exec" target="_blank" class="link-item">Priorização</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        USO INTERNO - ACESSO RESTRITO<br>
+        <div class="dev-tag">Desenvolvido por João Franco</div>
+    </div>
 
 </body>
 </html>
