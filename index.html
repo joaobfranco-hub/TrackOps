@@ -7,13 +7,13 @@
     <style>
         :root {
             --shopee-orange: #ee4d2d;
-            --glass-bg: rgba(255, 230, 220, 0.6);
-            --text-dark: #1a1a1a;
+            --glass-card: rgba(255, 255, 255, 0.15);
+            --watermark-orange: #ff8e78; /* Laranja claro para marca d'água */
         }
 
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
-            background: radial-gradient(circle at top right, #ffffff, #e2e8f0);
+            background-color: var(--shopee-orange); /* Fundo todo Laranja */
             margin: 0;
             padding: 40px 20px;
             display: flex;
@@ -23,25 +23,25 @@
         }
 
         .logo-container {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .logo-container img {
-            width: 140px;
-            opacity: 0.9;
+            width: 130px;
+            /* Filtro para deixar o logo totalmente branco */
+            filter: brightness(0) invert(1);
         }
 
-        /* AJUSTE DO NOME TRACKOPS */
+        /* TRACKOPS EM BRANCO, ITÁLICO E COM SOMBRA */
         .main-title {
-            color: var(--shopee-orange);
-            font-size: 4rem; /* Bem maior */
+            color: #ffffff;
+            font-size: 4.5rem;
             font-weight: 900;
-            font-style: italic; /* Itálico */
+            font-style: italic;
             letter-spacing: -2px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-transform: uppercase;
-            /* Sombra para a direita */
-            text-shadow: 8px 4px 0px rgba(0, 0, 0, 0.1); 
+            text-shadow: 8px 4px 0px rgba(0, 0, 0, 0.15); 
         }
 
         .dashboard-grid {
@@ -53,27 +53,24 @@
         }
 
         .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: var(--glass-card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 16px;
             padding: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            background: rgba(255, 230, 220, 0.9);
-            border-color: var(--shopee-orange);
-            box-shadow: 0 20px 40px rgba(238, 77, 45, 0.15);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .card-header {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            color: #444;
+            color: #ffffff;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -83,8 +80,8 @@
         .card-header::before {
             content: '';
             width: 4px;
-            height: 20px;
-            background: var(--shopee-orange);
+            height: 22px;
+            background: #ffffff;
             border-radius: 2px;
         }
 
@@ -95,54 +92,46 @@
         }
 
         .link-item {
-            background: rgba(255, 255, 255, 0.5);
-            padding: 14px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
             border-radius: 10px;
             text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
+            color: var(--shopee-orange); /* Texto do link em laranja */
+            font-size: 0.85rem;
             font-weight: 700;
             transition: all 0.2s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid transparent;
+            white-space: nowrap; /* Garante que o texto fique em uma linha */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Corta com reticências se o nome for gigante */
+            text-align: center;
         }
 
         .link-item:hover {
-            background: #fff;
-            color: var(--shopee-orange);
-            border-color: rgba(238, 77, 45, 0.3);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .link-item::after {
-            content: 'VIEW';
-            font-size: 0.65rem;
-            background: var(--shopee-orange);
-            color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            opacity: 0.8;
+            background: #ffffff;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .footer {
             margin-top: 60px;
             text-align: center;
-            color: #888;
-            font-size: 0.75rem;
+            color: #ffffff; /* Texto de rodapé branco */
+            font-size: 0.8rem;
+            font-weight: 600;
             letter-spacing: 1px;
         }
 
         .dev-tag {
-            color: #334155;
+            color: var(--watermark-orange); /* Laranja claro marca d'água */
             font-weight: 800;
-            margin-top: 8px;
-            font-size: 0.8rem;
+            margin-top: 10px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; text-shadow: 4px 2px 0px rgba(0, 0, 0, 0.1); }
+            .main-title { font-size: 2.8rem; }
             .dashboard-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -196,7 +185,7 @@
     </div>
 
     <div class="footer">
-        SISTEMA DE MONITORAMENTO OPERACIONAL<br>
+        SISTEMA DE MONITORAMENTO OPERACIONAL
         <div class="dev-tag">Desenvolvido por João Franco</div>
     </div>
 
